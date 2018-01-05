@@ -1,4 +1,5 @@
-activator-akka-scala-seed
-=========================
+Akka in Action(chapter 2,3,6)
 
-A minimal seed template for an Akka with Scala build 
+REST API
+
+
