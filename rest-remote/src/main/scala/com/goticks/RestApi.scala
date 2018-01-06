@@ -11,15 +11,7 @@ import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server._
 
-class RestApi(system: ActorSystem, timeout: Timeout)
-  extends RestRoutes {
-  implicit val requestTimeout = timeout
-  implicit def executionContext = system.dispatcher
-
-  def createBoxOffice = system.actorOf(BoxOffice.props, BoxOffice.name)
-}
-
-trait RestRoutes extends BoxOfficeApi
+trait RestApi extends BoxOfficeApi
   with EventMarshalling {
   import StatusCodes._
 
