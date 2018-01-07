@@ -2,7 +2,6 @@ package com.goticks
 
 import akka.actor.ActorSystem
 import akka.event.Logging
-import akka.http.javadsl.ServerBinding
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer

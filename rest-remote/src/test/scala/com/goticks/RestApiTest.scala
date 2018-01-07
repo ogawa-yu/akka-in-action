@@ -8,6 +8,8 @@ import com.goticks.BoxOffice.{Event, Events}
 import com.goticks.TicketSeller.{Ticket, Tickets}
 import org.scalatest.{Matchers, WordSpec}
 
+import scala.concurrent.ExecutionContext
+
 class RestApiTest extends WordSpec
   with Matchers
   with ScalatestRouteTest
@@ -15,7 +17,11 @@ class RestApiTest extends WordSpec
   with EventMarshalling {
 
   import scala.concurrent.duration._
-  val testRoutes = new RestApi(system, Timeout(3 second)).routes
+  val testRoutes = new RestApi() {
+    implicit def executionContext = system.dispatcher
+    implicit def requestTimeout = Timeout(3 second)
+    def createBoxOffice = system.actorOf(BoxOffice.props, BoxOffice.name)
+  }.routes
 
   "The RestApi" should {
     "eventRoute for Get Event" in {
