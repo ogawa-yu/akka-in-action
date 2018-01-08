@@ -8,8 +8,6 @@ import com.goticks.BoxOffice.{Event, Events}
 import com.goticks.TicketSeller.{Ticket, Tickets}
 import org.scalatest.{Matchers, WordSpec}
 
-import scala.concurrent.ExecutionContext
-
 class RestApiTest extends WordSpec
   with Matchers
   with ScalatestRouteTest

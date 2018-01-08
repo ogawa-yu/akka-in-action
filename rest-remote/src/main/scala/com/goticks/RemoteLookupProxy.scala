@@ -12,6 +12,7 @@ class RemoteLookupProxy(path: String)
   sendIdentifyRequest()
 
   def sendIdentifyRequest(): Unit = {
+    log.info("send identify request=>{}", path)
     val selection = context.actorSelection(path)
     selection ! Identify(path)
   }
@@ -19,7 +20,7 @@ class RemoteLookupProxy(path: String)
   def receive = identify
 
   def identify: Receive = {
-    case ActorIdentity("path", Some(actor)) =>
+    case ActorIdentity(path, Some(actor)) =>
       context.setReceiveTimeout(Duration.Undefined)
       log.info("switching active state")
       context.become(active(actor))
