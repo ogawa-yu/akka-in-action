@@ -1,4 +1,4 @@
-package com.goticks
+package com.goticks.remote
 
 import akka.actor.{Actor, ActorIdentity, ActorLogging, ActorRef, Identify, Terminated}
 

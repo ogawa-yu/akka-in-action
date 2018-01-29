@@ -1,6 +1,7 @@
-package com.goticks
+package com.goticks.remote
 
 import akka.actor.ActorSystem
+import com.goticks.{BoxOffice, RequestTimeout}
 import com.typesafe.config.ConfigFactory
 
 object BackendMain extends App with RequestTimeout {

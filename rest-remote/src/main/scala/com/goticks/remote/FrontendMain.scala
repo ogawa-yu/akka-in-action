@@ -1,7 +1,8 @@
-package com.goticks
+package com.goticks.remote
 
 import akka.actor.{ActorRef, ActorSystem, Props}
 import akka.event.Logging
+import com.goticks.{RestApi, Startup}
 import com.typesafe.config.ConfigFactory
 
 object FrontendMain extends App with Startup {

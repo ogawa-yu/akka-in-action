@@ -1,6 +1,7 @@
-package com.goticks
+package com.goticks.single
 
-import akka.actor.ActorSystem
+import akka.actor.{ActorSystem, Props}
+import com.goticks.{BoxOffice, RestApi, Startup}
 import com.typesafe.config.ConfigFactory
 
 object SingleNodeMain extends App with Startup {

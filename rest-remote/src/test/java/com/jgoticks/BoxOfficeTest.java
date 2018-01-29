@@ -36,6 +36,7 @@ public class BoxOfficeTest extends TestKit {
         testActor_ = TestActorRef.create(system_, BoxOffice.props(), BoxOffice.name());
         FiniteDuration delay = FiniteDuration.create(5, "second");
         timeout_ = new Timeout(delay);
+
     }
 
     @AfterClass
